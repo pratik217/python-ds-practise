@@ -1,0 +1,25 @@
+fh = open("romeo.txt", "r")
+
+count = 0
+for line in fh:
+    print(line.strip())
+    count = count + 1
+
+print(count,"Lines")
+
+
+gh=open("mbox-short.txt", "r")
+
+count_gh =0
+
+for l in gh:
+    line_p=l.strip()
+    if "Received" in line_p:     
+    	count_gh=count_gh+1
+    	print(count_gh,":" ,line_p)
+        ind=line_p.find('from')
+        f_ind=line_p.find('(')
+        extrcted=line_p[ind+len('from'):f_ind]
+        print(extrcted)
+    
+print("Total lines counted: " , count_gh)
